@@ -1,0 +1,4 @@
+requests
+pyperclip
+zipfile
+pyinstaller
