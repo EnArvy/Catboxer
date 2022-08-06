@@ -16,6 +16,16 @@ if(len(sys.argv)==1):
 blacklist = [".exe",".jar",".doc",".docx",".cpl",".scr"]
 ext = os.path.splitext(sys.argv[1])[1]
 
+#Userhash for uploads to account
+userhash=""
+if os.path.exists(os.path.dirname(sys.argv[0])+"\Catboxer.conf"):
+    with open(os.path.dirname(sys.argv[0])+"\Catboxer.conf",'r') as file:
+        userhash=file.read().rstrip()
+        print("Uploading to logged in account")
+else:
+    print("Uploading anonymously")
+
+
 
 try:
     #if a folder is to be uploaded, zip it
@@ -29,6 +39,7 @@ try:
             exit()
         apidata={
             'reqtype': (None, 'fileupload'),
+            'userhash':(None,userhash),
             'fileToUpload': (sys.argv[1]+".zip", open(sys.argv[1]+".zip", 'rb')),
         }
     #If file with blacklisted ext is to be uploaded, zip it
@@ -43,6 +54,7 @@ try:
             zip.write(os.path.basename(sys.argv[1]))
         apidata={
             'reqtype': (None, 'fileupload'),
+            'userhash':(None,userhash),
             'fileToUpload': (sys.argv[1][:-4]+".zip", open(sys.argv[1][:-4]+".zip", 'rb')),
         }
     else:
@@ -53,6 +65,7 @@ try:
             exit()
         apidata={
             'reqtype': (None, 'fileupload'),
+            'userhash':(None,userhash),
             'fileToUpload': (sys.argv[1], open(sys.argv[1], 'rb')),
         }
 

@@ -11,6 +11,11 @@ Written in python.
 Just paste the release file `Catboxer.exe` in the following location:
 `C:\Users\YourUserName\AppData\Roaming\Microsoft\Windows\SendTo\`
 
+If you want to upload to your Catbox account:
+* Make a new text file `Catboxer.conf` in `C:\Users\YourUserName\AppData\Roaming\Microsoft\Windows\SendTo\`
+* Go to https://catbox.moe/user/manage.php
+* Copy the userhash and paste it in `Catboxer.conf`
+
 ## Usage
 
 * Right click on any file/folder.
