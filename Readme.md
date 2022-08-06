@@ -36,7 +36,7 @@ Files of sizes above 200MB are not allowed.
 
 * Clone this repository
 * Run `pip install -r requirements.txt`
-* Run `pyinstller --onefile -i Catboxer.ico Catboxer.py`
+* Run `pyinstaller --onefile -i Catboxer.ico Catboxer.py`
 
 
 
